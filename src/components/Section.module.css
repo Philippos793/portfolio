@@ -1,0 +1,9 @@
+.section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.title {
+  font-size: 2rem;
+}

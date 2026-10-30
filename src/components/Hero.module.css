@@ -1,0 +1,56 @@
+.hero {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+}
+
+.greeting {
+  color: var(--accent);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.name {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: -0.02em;
+}
+
+.role {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  color: var(--text-h);
+}
+
+.intro {
+  max-width: 55ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.primary,
+.secondary {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--accent);
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.secondary {
+  color: var(--accent);
+}
+
+.primary:hover,
+.secondary:hover {
+  opacity: 0.85;
+}

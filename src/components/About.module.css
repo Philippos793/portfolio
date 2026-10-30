@@ -1,0 +1,17 @@
+.content {
+  max-width: 65ch;
+}
+
+.content strong {
+  color: var(--text-h);
+}
+
+.cta {
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: var(--accent-bg);
+}
+
+.cta strong {
+  color: var(--accent);
+}

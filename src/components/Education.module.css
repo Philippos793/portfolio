@@ -1,0 +1,29 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.item {
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-soft);
+  border-radius: 0 12px 12px 0;
+}
+
+.period {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.degree {
+  font-size: 1.15rem;
+  margin: 4px 0;
+}
+
+.school {
+  margin: 0;
+}
