@@ -11,6 +11,11 @@ function Education() {
             <span className={styles.period}>{item.period}</span>
             <h3 className={styles.degree}>{item.degree}</h3>
             <p className={styles.school}>{item.school}</p>
+            {item.thesis && (
+              <p className={styles.thesis}>
+                <strong>Thesis:</strong> {item.thesis}
+              </p>
+            )}
           </li>
         ))}
       </ul>

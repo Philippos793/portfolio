@@ -15,6 +15,10 @@ function Hero({ name, role, intro = 'Welcome to my portfolio.' }) {
         <Link to="/contact" className={styles.secondary}>
           Get in touch
         </Link>
+        {/* Απλό <a>, όχι <Link>: το PDF είναι στατικό αρχείο, όχι route της εφαρμογής */}
+        <a href="/Philippos_Tsikouras_CV.pdf" download className={styles.secondary}>
+          Download CV
+        </a>
       </div>
     </section>
   )

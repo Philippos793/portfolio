@@ -9,7 +9,8 @@ export const contacts = [
     id: 'email',
     label: 'Email',
     value: email,
-    href: `mailto:${email}`,
+    // Οδηγεί στη φόρμα της ίδιας σελίδας αντί για mailto:
+    href: '#contact-form',
   },
   {
     id: 'phone',

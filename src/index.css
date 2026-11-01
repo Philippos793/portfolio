@@ -16,23 +16,28 @@
   --content-width: 1100px;
   --nav-height: 64px;
 
+  @media (max-width: 600px) {
+    --nav-height: 104px;
+  }
+
   font: 17px/1.6 var(--sans);
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #111318;
-    --bg-soft: #1a1d24;
-    --border: #2a2e38;
-    --accent: #a78bfa;
-    --accent-bg: rgba(167, 139, 250, 0.12);
-  }
+/* Το data-theme το βάζει το script στο index.html (πρώτη φόρτωση)
+   και μετά το ThemeProvider (όταν πατηθεί το κουμπί) */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #111318;
+  --bg-soft: #1a1d24;
+  --border: #2a2e38;
+  --accent: #a78bfa;
+  --accent-bg: rgba(167, 139, 250, 0.12);
 }
 
 *,
@@ -60,6 +65,12 @@ body {
 
 main {
   flex: 1;
+}
+
+.page-loading {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 80px 24px;
 }
 
 h1,

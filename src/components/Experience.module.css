@@ -1,0 +1,31 @@
+/* Ίδια εμφάνιση με το Education: το composes δανείζεται τις κλάσεις του */
+.list {
+  composes: list from './Education.module.css';
+}
+
+.item {
+  composes: item from './Education.module.css';
+}
+
+.period {
+  composes: period from './Education.module.css';
+}
+
+.role {
+  composes: degree from './Education.module.css';
+}
+
+.company {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.highlights {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  font-size: 0.95rem;
+}
+
+.highlights li + li {
+  margin-top: 4px;
+}

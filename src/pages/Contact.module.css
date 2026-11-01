@@ -45,6 +45,10 @@
   overflow-wrap: anywhere;
 }
 
+.formTitle {
+  margin: 48px 0 16px;
+}
+
 @media (max-width: 600px) {
   .list {
     grid-template-columns: 1fr;

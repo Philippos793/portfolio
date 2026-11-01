@@ -1,0 +1,17 @@
+.toggle {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg-soft);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.toggle:hover,
+.toggle:focus-visible {
+  border-color: var(--accent);
+}

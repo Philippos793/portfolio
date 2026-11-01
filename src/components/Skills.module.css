@@ -33,6 +33,7 @@
   background: var(--bg);
 }
 
+.languages,
 .learning {
   margin-top: 24px;
   font-size: 0.95rem;

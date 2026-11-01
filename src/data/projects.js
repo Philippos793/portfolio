@@ -16,7 +16,17 @@ export const projects = [
     context: 'Personal project',
     description:
       'Employee management and task collaboration app with JWT roles, work-shift tracking, monthly reports and in-app notifications.',
-    tech: ['React', 'Spring Boot', 'PostgreSQL'],
+    tech: ['Java', 'Spring Boot', 'Spring Security', 'JWT', 'PostgreSQL', 'React', 'Docker'],
+    features: [
+      'Secure JWT login with ADMIN and EMPLOYEE roles',
+      'Employee lifecycle management: create, edit, deactivate and reactivate while preserving history',
+      'Registration requests approved by an administrator, and time-limited invitation links',
+      'Email notifications for approvals, invitations and account reactivation',
+      'Work-shift clock-in / clock-out with timezone-safe timestamps',
+      'Monthly work-hours reports and payroll preparation',
+      'Task management with assignment, deadlines, checklists, attachments and activity history',
+      'Persistent in-app notifications for task updates',
+    ],
     repo: 'https://github.com/Philippos793/ManageFlow',
     images: [
       { src: mfAdminDashboard, alt: 'Admin dashboard with operational summary cards' },
@@ -34,6 +44,14 @@ export const projects = [
     description:
       'Bookstore web app where users register, manage profiles, offer and search books. Secured with Spring Security.',
     tech: ['Java', 'Spring Boot', 'MySQL'],
+    features: [
+      'User registration and login',
+      'Authentication and authorization with Spring Security',
+      'Profile management with preferred book categories',
+      'Book offer management',
+      'Book search',
+      'MySQL database integration',
+    ],
     repo: 'https://github.com/Philippos793/Online-BookStore-Application',
     images: [
       { src: bsDashboard, alt: 'Bookstore dashboard' },

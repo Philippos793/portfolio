@@ -1,21 +1,36 @@
+// Ίδιες κατηγορίες και περιεχόμενο με το CV
 export const skillGroups = [
   {
-    title: 'Frontend',
-    skills: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'React Router', 'Vite'],
+    title: 'Programming Languages',
+    skills: ['Java', 'JavaScript', 'Python', 'C', 'PHP'],
   },
   {
-    title: 'Backend',
-    skills: ['Java', 'Spring Boot', 'Spring Security', 'JWT', 'JPA / Hibernate', 'REST APIs'],
+    title: 'Frameworks & Web Technologies',
+    skills: ['Spring Boot', 'React', 'HTML5', 'CSS3'],
   },
   {
     title: 'Databases',
-    skills: ['PostgreSQL', 'MySQL', 'Flyway'],
+    skills: ['SQL', 'MySQL', 'PostgreSQL'],
   },
   {
-    title: 'Testing & Tools',
-    skills: ['JUnit', 'Mockito', 'Vitest', 'Docker', 'Git', 'Swagger / OpenAPI'],
+    title: 'Tools & Technologies',
+    skills: [
+      'Git',
+      'GitHub',
+      'Maven',
+      'Hibernate / JPA',
+      'Spring Security',
+      'REST APIs',
+      'Docker',
+      'Linux',
+    ],
   },
 ]
 
-// Τεχνολογίες που μαθαίνω τώρα: παίρνουν σήμανση "learning"
-export const learning = ['TypeScript']
+export const languages = [
+  { name: 'Greek', level: 'Native' },
+  { name: 'English', level: 'B2 – Independent User' },
+]
+
+// Τεχνολογίες που μαθαίνω τώρα. Όσο είναι άδειο, η γραμμή δεν εμφανίζεται
+export const learning = []

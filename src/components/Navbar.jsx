@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router'
+import ThemeToggle from './ThemeToggle.jsx'
 import styles from './Navbar.module.css'
 
 function Navbar({ brand, links }) {
@@ -13,7 +14,7 @@ function Navbar({ brand, links }) {
             <li key={link.to}>
               <NavLink
                 to={link.to}
-                end
+                end={link.to === '/'}
                 className={({ isActive }) =>
                   isActive ? `${styles.link} ${styles.active}` : styles.link
                 }
@@ -22,6 +23,9 @@ function Navbar({ brand, links }) {
               </NavLink>
             </li>
           ))}
+          <li>
+            <ThemeToggle />
+          </li>
         </ul>
       </nav>
     </header>

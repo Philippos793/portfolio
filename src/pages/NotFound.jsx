@@ -1,8 +1,11 @@
 import { Link } from 'react-router'
 import Section from '../components/Section.jsx'
+import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 import styles from './NotFound.module.css'
 
 function NotFound() {
+  useDocumentTitle('Page not found')
+
   return (
     <Section title="Page not found">
       <p className={styles.code}>404</p>

@@ -1,8 +1,11 @@
-import { skillGroups, learning } from '../data/skills.js'
+import { skillGroups, languages, learning } from '../data/skills.js'
 import Section from './Section.jsx'
+import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 import styles from './Skills.module.css'
 
 function Skills() {
+  useDocumentTitle('Skills')
+
   return (
     <Section id="skills" title="Skills">
       <div className={styles.grid}>
@@ -19,6 +22,11 @@ function Skills() {
           </div>
         ))}
       </div>
+
+      <p className={styles.languages}>
+        Languages:{' '}
+        {languages.map((lang) => `${lang.name} (${lang.level})`).join(' · ')}
+      </p>
 
       {learning.length > 0 && (
         <p className={styles.learning}>

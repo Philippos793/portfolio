@@ -9,6 +9,32 @@
       content="Philippos Tsikouras — Full-Stack Developer working with React, Java and Spring Boot. Projects, skills and contact information."
     />
     <title>Philippos Tsikouras | Full-Stack Developer</title>
+
+    <!-- Preview όταν μοιράζεται το link (LinkedIn, Facebook, Viber κ.λπ.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Philippos Tsikouras | Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full-Stack Developer working with React, Java and Spring Boot. Projects, skills and contact information."
+    />
+    <!-- TODO στο deploy: απόλυτο URL, π.χ. https://<domain>/og-image.png, και og:url -->
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Τρέχει πριν το React, ώστε η σελίδα να μην «αναβοσβήνει» σε λάθος θέμα
+      ;(function () {
+        var theme
+        try {
+          theme = localStorage.getItem('theme')
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
