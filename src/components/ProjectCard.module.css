@@ -15,12 +15,14 @@
 
 .cover {
   width: calc(100% + 48px);
-  /* αλλιώς το global img { max-width: 100% } την κόβει πριν φτάσει στις άκρες */
+  /* otherwise the global img { max-width: 100% } stops it short of the edges */
   max-width: none;
   margin: -24px -24px 20px;
-  aspect-ratio: 16 / 10;
+  /* 16:9 like the ManageFlow cover, so its edges are not cropped */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  object-position: top;
+  /* Images wider than 16:9 are cropped on the right: logo and title are on the left */
+  object-position: top left;
   border-bottom: 1px solid var(--border);
   border-radius: 12px 12px 0 0;
 }

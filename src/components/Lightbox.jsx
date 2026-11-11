@@ -8,7 +8,7 @@ function Lightbox({ image, onClose }) {
     }
 
     document.addEventListener('keydown', handleKeyDown)
-    // να μη σκρολάρει η σελίδα από πίσω όσο είναι ανοιχτό
+    // prevent the page behind from scrolling while it is open
     document.body.style.overflow = 'hidden'
 
     return () => {

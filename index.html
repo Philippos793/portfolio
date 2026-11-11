@@ -10,27 +10,28 @@
     />
     <title>Philippos Tsikouras | Full-Stack Developer</title>
 
-    <!-- Preview όταν μοιράζεται το link (LinkedIn, Facebook, Viber κ.λπ.) -->
+    <!-- Preview when the link is shared (LinkedIn, Facebook, Viber, etc.) -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Philippos Tsikouras | Full-Stack Developer" />
     <meta
       property="og:description"
       content="Full-Stack Developer working with React, Java and Spring Boot. Projects, skills and contact information."
     />
-    <!-- TODO στο deploy: απόλυτο URL, π.χ. https://<domain>/og-image.png, και og:url -->
+    <!-- TODO on deploy: absolute URL, e.g. https://<domain>/og-image.png, and og:url -->
     <meta property="og:image" content="/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <script>
-      // Τρέχει πριν το React, ώστε η σελίδα να μην «αναβοσβήνει» σε λάθος θέμα
+      // Runs before React, so the page does not flash in the wrong theme
       ;(function () {
         var theme
         try {
           theme = localStorage.getItem('theme')
         } catch (e) {}
+        // Default: dark. Light only if the visitor has chosen it
         if (theme !== 'light' && theme !== 'dark') {
-          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          theme = 'dark'
         }
         document.documentElement.dataset.theme = theme
       })()

@@ -1,6 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* 2 columns on desktop, 1 on mobile. min() prevents overflow on narrow screens */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   gap: 24px;
 }
 
@@ -25,12 +26,27 @@
 }
 
 .skill {
-  font-size: 0.85rem;
-  padding: 4px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  padding: 6px 14px;
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--text-h);
   background: var(--bg);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.skill:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .languages,

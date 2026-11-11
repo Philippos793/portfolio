@@ -1,4 +1,4 @@
-/* Ίδια εμφάνιση με το Education: το composes δανείζεται τις κλάσεις του */
+/* Same look as Education: composes reuses its classes */
 .list {
   composes: list from './Education.module.css';
 }

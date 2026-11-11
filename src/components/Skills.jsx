@@ -1,5 +1,6 @@
 import { skillGroups, languages, learning } from '../data/skills.js'
 import Section from './Section.jsx'
+import TechIcon from './TechIcon.jsx'
 import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 import styles from './Skills.module.css'
 
@@ -14,8 +15,9 @@ function Skills() {
             <h3 className={styles.groupTitle}>{group.title}</h3>
             <ul className={styles.list}>
               {group.skills.map((skill) => (
-                <li key={skill} className={styles.skill}>
-                  {skill}
+                <li key={skill.name} className={styles.skill}>
+                  <TechIcon icon={skill.icon} color={skill.color} className={styles.icon} />
+                  {skill.name}
                 </li>
               ))}
             </ul>

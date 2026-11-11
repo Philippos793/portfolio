@@ -1,5 +1,5 @@
-/* Global styles: μόνο design tokens, reset και βασική τυπογραφία.
-   Ό,τι αφορά συγκεκριμένο component πάει στο δικό του .module.css */
+/* Global styles: design tokens, reset and base typography only.
+   Anything specific to a component goes in its own .module.css */
 
 :root {
   --text: #4b5563;
@@ -7,8 +7,14 @@
   --bg: #ffffff;
   --bg-soft: #f5f5f7;
   --border: #e5e7eb;
-  --accent: #6d28d9;
-  --accent-bg: rgba(109, 40, 217, 0.08);
+  /* Light blue → blue. Darker shades in light mode, for contrast against white */
+  --accent: #0369a1;
+  --accent-2: #1d4ed8;
+  --accent-bg: rgba(3, 105, 161, 0.08);
+  /* Background: two soft glows and a dot grid */
+  --glow-1: rgba(56, 189, 248, 0.12);
+  --glow-2: rgba(59, 130, 246, 0.08);
+  --dots: rgba(11, 13, 18, 0.09);
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
@@ -23,12 +29,16 @@
   font: 17px/1.6 var(--sans);
   color-scheme: light;
   color: var(--text);
-  background: var(--bg);
+  /* On html, not body: otherwise the body background would cover the dots (z-index: -1) */
+  background:
+    radial-gradient(640px circle at 10% 0%, var(--glow-1), transparent 70%),
+    radial-gradient(560px circle at 90% 8%, var(--glow-2), transparent 70%),
+    var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 
-/* Το data-theme το βάζει το script στο index.html (πρώτη φόρτωση)
-   και μετά το ThemeProvider (όταν πατηθεί το κουμπί) */
+/* data-theme is set by the script in index.html (first load)
+   and then by ThemeProvider (when the toggle is clicked) */
 :root[data-theme='dark'] {
   color-scheme: dark;
   --text: #9ca3af;
@@ -36,8 +46,12 @@
   --bg: #111318;
   --bg-soft: #1a1d24;
   --border: #2a2e38;
-  --accent: #a78bfa;
-  --accent-bg: rgba(167, 139, 250, 0.12);
+  --accent: #38bdf8;
+  --accent-2: #3b82f6;
+  --accent-bg: rgba(56, 189, 248, 0.12);
+  --glow-1: rgba(56, 189, 248, 0.12);
+  --glow-2: rgba(59, 130, 246, 0.12);
+  --dots: rgba(255, 255, 255, 0.07);
 }
 
 *,
@@ -48,15 +62,29 @@
 
 html {
   scroll-behavior: smooth;
-  /* ώστε τα anchors (#about κ.λπ.) να μην κρύβονται κάτω από το sticky navbar */
+  /* so anchors (#about, etc.) are not hidden under the sticky navbar */
   scroll-padding-top: var(--nav-height);
 }
 
 body {
+  position: relative;
   margin: 0;
 }
 
-/* Το footer κάθεται πάντα στο κάτω μέρος, ακόμα κι αν η σελίδα είναι κοντή */
+/* Dot grid at the top of the page, fading out towards the bottom */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1200px;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(var(--dots) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, #000 30%, transparent);
+}
+
+/* Keep the footer at the bottom, even on short pages */
 #root {
   min-height: 100svh;
   display: flex;

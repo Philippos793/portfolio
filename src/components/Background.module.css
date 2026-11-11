@@ -1,0 +1,56 @@
+.tabs {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-soft);
+}
+
+.tab {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+}
+
+.tab:hover {
+  color: var(--accent);
+}
+
+.tab[aria-selected='true'] {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Short fade when the new content appears */
+.panel:not([hidden]) {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel:not([hidden]) {
+    animation: none;
+  }
+}

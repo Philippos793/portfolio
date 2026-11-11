@@ -7,3 +7,14 @@
 .title {
   font-size: 2rem;
 }
+
+/* On mobile, 80+80px between two sections is almost half a screen of empty space */
+@media (max-width: 600px) {
+  .section {
+    padding: 48px 16px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+}

@@ -5,7 +5,7 @@ const SOCIAL_LINKS = [
   { href: 'https://www.linkedin.com/in/philippos-tsikouras', label: 'LinkedIn' },
 ]
 
-// Υπολογίζεται μία φορά, όταν φορτώνει το module, όχι σε κάθε render
+// Computed once when the module loads, not on every render
 const YEAR = new Date().getFullYear()
 
 function Footer({ name }) {

@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 
-// Σε κάθε αλλαγή σελίδας γυρνάμε στην κορυφή.
-// Δεν κάνει render τίποτα, υπάρχει μόνο για το effect.
+// Scroll to the top on every page change.
+// Renders nothing, it only exists for the effect.
 function ScrollToTop() {
   const { pathname } = useLocation()
 

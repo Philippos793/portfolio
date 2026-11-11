@@ -1,6 +1,6 @@
 # Philippos Tsikouras — Portfolio
 
-Personal portfolio website showcasing my projects, skills and education as a full-stack developer.
+Personal portfolio website showcasing my projects, skills, experience and education as a full-stack developer.
 
 Built as a single-page application with **React** and **Vite**, with client-side routing and component-scoped styling.
 
@@ -8,13 +8,17 @@ Built as a single-page application with **React** and **Vite**, with client-side
 
 ## Features
 
-- **Multi-page SPA** with React Router: Home, Projects, Skills, Contact and a 404 page
-- **Active navigation** — the current page is highlighted in the navbar
-- **Data-driven content** — projects, skills, education and contact details live in `src/data`, so the UI updates without touching components
-- **Reusable components** such as `Section` and `ProjectCard`, built with composition (`children`)
+- **Multi-page SPA** with React Router: Home, Projects, a page per project, Skills, Contact and a 404 page
+- **Project pages** with features, tech stack and a screenshot gallery that opens in a keyboard-friendly lightbox
+- **Lazy-loaded routes** with `React.lazy` and `Suspense`, so each page is downloaded only when it is visited
+- **Dark / light theme** with a toggle, shared through React Context and saved in `localStorage` (dark by default, no flash on load)
+- **Contact form** built with `useReducer`, client-side validation and submission through Formspree
+- **Experience & Education tabs** following the WAI-ARIA tabs pattern, including arrow-key navigation
+- **Downloadable CV** and link-preview meta tags (Open Graph)
+- **Data-driven content** — projects, skills, experience, education and contact details live in `src/data`, so the UI updates without touching components
+- **Reusable components and custom hooks** such as `Section`, `ProjectCard`, `useTheme` and `useDocumentTitle`
 - **Responsive layout** with CSS Grid, `clamp()` typography and mobile breakpoints
-- **Light / dark colour scheme** that follows the operating system preference
-- **Accessible markup** — semantic HTML, heading hierarchy and descriptive `alt` text
+- **Accessible markup** — semantic HTML, visible focus styles, ARIA where needed and support for reduced motion
 
 ## Tech Stack
 
@@ -24,6 +28,8 @@ Built as a single-page application with **React** and **Vite**, with client-side
 | Build     | Vite                              |
 | Routing   | React Router                      |
 | Styling   | CSS Modules, CSS custom properties |
+| Icons     | Simple Icons                      |
+| Forms     | Formspree                         |
 | Linting   | Oxlint                            |
 
 ## Screenshots
@@ -31,16 +37,24 @@ Built as a single-page application with **React** and **Vite**, with client-side
 ### Projects
 ![Projects page](docs/projects.png)
 
+### Project page
+![Project page](docs/project-detail.png)
+
 ### Skills
 ![Skills page](docs/skills.png)
+
+### Contact
+![Contact page](docs/contact.png)
 
 ## Project Structure
 
 ```
 src/
-  components/   Reusable UI components (Navbar, Hero, Section, ProjectCard, ...)
-  pages/        Route-level pages (Home, Contact, NotFound)
-  data/         Content: projects, skills, education, contact details
+  components/   Reusable UI components (Navbar, Hero, Section, ProjectCard, Lightbox, ...)
+  pages/        Route-level pages (Home, ProjectDetail, Contact, NotFound)
+  context/      Theme context and provider
+  hooks/        Custom hooks (useTheme, useDocumentTitle)
+  data/         Content: projects, skills, experience, education, contact details
   assets/       Project screenshots
   index.css     Global styles and design tokens
 ```

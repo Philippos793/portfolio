@@ -5,7 +5,7 @@ import Footer from './components/Footer.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import Home from './pages/Home.jsx'
 
-// Η αρχική φορτώνει αμέσως, οι υπόλοιπες σελίδες μόνο όταν τις ανοίξει κάποιος
+// Home loads right away, the other pages only when someone opens them
 const Projects = lazy(() => import('./components/Projects.jsx'))
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail.jsx'))
 const Skills = lazy(() => import('./components/Skills.jsx'))

@@ -1,5 +1,5 @@
-// value: αυτό που εμφανίζεται, href: πού οδηγεί το link.
-// Όσα έχουν value: null δεν εμφανίζονται στη σελίδα.
+// value: what is displayed, href: where the link goes.
+// Entries with value: null are not shown on the page.
 const email = 'philipos793@gmail.com'
 const phone = '+30 694 242 4628'
 const linkedin = 'linkedin.com/in/philippos-tsikouras'
@@ -9,14 +9,14 @@ export const contacts = [
     id: 'email',
     label: 'Email',
     value: email,
-    // Οδηγεί στη φόρμα της ίδιας σελίδας αντί για mailto:
+    // Points to the form on the same page instead of mailto:
     href: '#contact-form',
   },
   {
     id: 'phone',
     label: 'Phone',
     value: phone,
-    // στο tel: τα κενά δεν επιτρέπονται
+    // tel: links must not contain spaces
     href: `tel:${phone?.replaceAll(' ', '')}`,
   },
   {

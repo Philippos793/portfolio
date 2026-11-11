@@ -14,7 +14,7 @@ function Contact() {
     e.preventDefault()
     const input = nameInputRef.current
     input.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    // preventScroll: αλλιώς το focus θα «πηδούσε» αμέσως και θα χαλούσε το ομαλό scroll
+    // preventScroll: otherwise focus would jump instantly and break the smooth scroll
     input.focus({ preventScroll: true })
   }
 

@@ -90,7 +90,8 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  object-position: top;
+  /* Top left: that is where each screen has its logo and title */
+  object-position: top left;
   border-bottom: 1px solid var(--border);
 }
 

@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
 import styles from './ContactForm.module.css'
 
-// Το endpoint του Formspree: παραλαμβάνει το μήνυμα και το προωθεί στο email μου
+// Formspree endpoint: receives the message and forwards it to my email
 const FORM_ENDPOINT = 'https://formspree.io/f/mrppywzk'
 
 const initialState = {
@@ -16,7 +16,7 @@ function reducer(state, action) {
       return {
         ...state,
         values: { ...state.values, [action.field]: action.value },
-        // Μόλις ο χρήστης διορθώνει ένα πεδίο, σβήνουμε το λάθος του
+        // As soon as the user edits a field, clear its error
         errors: { ...state.errors, [action.field]: undefined },
       }
     case 'invalid':
@@ -24,10 +24,10 @@ function reducer(state, action) {
     case 'sending':
       return { ...state, status: 'sending' }
     case 'success':
-      // Αδειάζουμε τα πεδία, ώστε να μη σταλεί κατά λάθος το ίδιο μήνυμα δεύτερη φορά
+      // Clear the fields so the same message is not sent twice by accident
       return { ...initialState, status: 'success' }
     case 'error':
-      // Κρατάμε τα πεδία: ο χρήστης δεν πρέπει να χάσει ό,τι έγραψε
+      // Keep the fields: the user should not lose what they wrote
       return { ...state, status: 'error' }
     default:
       throw new Error(`Unknown action: ${action.type}`)
@@ -66,10 +66,10 @@ function ContactForm({ nameInputRef }) {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(values),
       })
-      // Το fetch δεν πετάει error για 4xx/5xx, οπότε ελέγχουμε μόνοι μας το response.ok
+      // fetch does not throw on 4xx/5xx, so check response.ok ourselves
       dispatch({ type: response.ok ? 'success' : 'error' })
     } catch {
-      // Εδώ φτάνουμε όταν δεν υπάρχει καθόλου σύνδεση
+      // We get here when there is no connection at all
       dispatch({ type: 'error' })
     }
   }
@@ -124,7 +124,7 @@ function ContactForm({ nameInputRef }) {
         {isSending ? 'Sending…' : 'Send message'}
       </button>
 
-      {/* role="status": ο screen reader ανακοινώνει το μήνυμα μόλις εμφανιστεί */}
+      {/* role="status": screen readers announce the message as soon as it appears */}
       <div role="status">
         {status === 'success' && (
           <p className={styles.success}>Thanks! Your message has been sent. I&apos;ll get back to you soon.</p>

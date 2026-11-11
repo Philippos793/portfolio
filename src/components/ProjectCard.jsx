@@ -1,15 +1,15 @@
 import { Link } from 'react-router'
 import styles from './ProjectCard.module.css'
 
-function ProjectCard({ id, title, context, description, tech, repo, images }) {
-  const cover = images?.[0]
+function ProjectCard({ id, title, context, description, tech, repo, images, cover }) {
+  const coverSrc = cover ?? images?.[0]?.src
   const detailsUrl = `/projects/${id}`
 
   return (
     <article className={styles.card}>
-      {cover && (
+      {coverSrc && (
         <Link to={detailsUrl} tabIndex={-1} aria-hidden="true">
-          <img src={cover.src} alt="" className={styles.cover} loading="lazy" />
+          <img src={coverSrc} alt="" className={styles.cover} loading="lazy" />
         </Link>
       )}
       <p className={styles.context}>{context}</p>

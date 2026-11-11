@@ -13,7 +13,7 @@ function ProjectDetail() {
   const closeLightbox = useCallback(() => setActiveImage(null), [])
 
   const project = projects.find((p) => p.id === id)
-  // Τα hooks πρέπει να καλούνται πριν από κάθε early return
+  // Hooks must be called before any early return
   useDocumentTitle(project?.title ?? 'Page not found')
 
   if (!project) {

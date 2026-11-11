@@ -6,21 +6,26 @@ function About() {
     <Section id="about" title="About me">
       <div className={styles.content}>
         <p>
-          I&apos;m a full-stack developer who enjoys turning ideas into complete,
-          working applications — from the database all the way to the interface.
-          My main stack is <strong>React</strong> and <strong>JavaScript</strong> on
-          the front end, <strong>Java</strong> with <strong>Spring Boot</strong> on
-          the back end, and relational databases such as{' '}
-          <strong>PostgreSQL</strong> and <strong>MySQL</strong>.
+          I&apos;m a Computer Science and Engineering graduate from the University
+          of Ioannina, Greece, with a strong interest in software development and
+          building full-stack applications.
         </p>
         <p>
-          I care about clean, readable code that is easy to maintain, and about
-          interfaces that feel intuitive to the people using them. Good UI/UX and
-          solid architecture matter to me just as much as making things work.
+          My main tech stack includes <strong>React</strong> and{' '}
+          <strong>JavaScript</strong> for frontend development,{' '}
+          <strong>Java</strong> and <strong>Spring Boot</strong> for backend
+          development, and relational databases such as <strong>PostgreSQL</strong>{' '}
+          and <strong>MySQL</strong>.
+        </p>
+        <p>
+          I enjoy writing clean, maintainable code and developing applications with
+          a focus on functionality, performance, and user experience. Through my
+          personal projects and developer internship, I&apos;ve gained practical
+          experience and a strong motivation to keep learning and improving.
         </p>
         <p className={styles.cta}>
-          I&apos;m currently <strong>open to junior developer roles</strong> —
-          full-stack ideally, but also back-end or front-end positions.
+          I&apos;m currently looking for opportunities to grow professionally,
+          contribute to a development team, and build meaningful software.
         </p>
       </div>
     </Section>

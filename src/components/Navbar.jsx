@@ -3,11 +3,20 @@ import ThemeToggle from './ThemeToggle.jsx'
 import styles from './Navbar.module.css'
 
 function Navbar({ brand, links }) {
+  const initials = brand
+    .split(' ')
+    .map((part) => part[0])
+    .join('')
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav} aria-label="Main">
-        <Link to="/" className={styles.brand}>
-          {brand}
+        {/* Name and monogram are stacked on top of each other and swap on hover */}
+        <Link to="/" className={styles.brand} aria-label={`${brand} — home`}>
+          <span className={styles.brandName}>{brand}</span>
+          <span className={styles.monogram} aria-hidden="true">
+            {initials}
+          </span>
         </Link>
         <ul className={styles.links}>
           {links.map((link) => (

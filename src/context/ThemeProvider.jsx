@@ -2,9 +2,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ThemeContext } from './ThemeContext.js'
 
 function ThemeProvider({ children }) {
-  // Το αρχικό θέμα το έχει ήδη αποφασίσει το script στο index.html
+  // The initial theme has already been set by the script in index.html
   const [theme, setTheme] = useState(
-    () => document.documentElement.dataset.theme ?? 'light',
+    () => document.documentElement.dataset.theme ?? 'dark',
   )
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function ThemeProvider({ children }) {
     try {
       localStorage.setItem('theme', theme)
     } catch {
-      // π.χ. private mode: απλά δεν θυμόμαστε την επιλογή
+      // e.g. private mode: the choice is just not remembered
     }
   }, [theme])
 
